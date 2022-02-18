@@ -31,9 +31,7 @@ def _():
     # "iat" : int(time.time())
   # }
 
-  # encoded_jwt = jwt.encode(user, "superkey", algorithm="HS256")
-  # print("#"*30)
-  # print(encoded_jwt) 
+  
 
   
   
@@ -50,8 +48,11 @@ def _():
       print("#"*3)
       print(g.SESSIONS)
       response.set_cookie("user_session_id", user_session_id)
+      encoded_jwt = jwt.encode(user, "superkey", algorithm="HS256")
+      print("#"*30)
+      print(encoded_jwt) 
       # response.set_cookie("user_email", user_email, secret=g.COOKIE_SECRET)
-      # response.set_cookie(encoded_jwt, user_session_id)
+      response.set_cookie(encoded_jwt, user_session_id, secret=g.COOKIE_SECRET)
       return redirect("/admin")
     # FAIL
     else: 

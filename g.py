@@ -11,3 +11,4 @@ COOKIE_SECRET = "my secret key"
 # SESSIONS = []
 SESSIONS = {}
 
+TWEETS = []

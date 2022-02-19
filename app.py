@@ -10,10 +10,13 @@ import items_get            # GET
 import admin_get            # GET
 import signup_ok_get        # GET
 import logout_get           # GET
+import tweets_get           # GET
 
 import signup_post          # POST
 import login_post           # POST
 import delete_item_post     # POST
+import add_tweet_post       # POST
+import delete_tweet_post    #POST
 
 ##############################
 @get("/app.css")

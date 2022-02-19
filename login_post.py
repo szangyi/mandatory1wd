@@ -31,9 +31,7 @@ def _():
     # "iat" : int(time.time())
   # }
 
-  
 
-  
   
   for user in g.USERS:
     # SUCCESS

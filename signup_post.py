@@ -23,7 +23,13 @@ def _():
 
   user_id = str(uuid.uuid4())
   
-  user = {"id":user_id, "email":user_email, "name":user_name, "lastname":user_lastname, "password":user_password}
+  user = {
+    "id":user_id, 
+    "email":user_email, 
+    "name":user_name, 
+    "lastname":user_lastname, 
+    "password":user_password
+    }
   g.USERS.append(user)
   print("#"*10)
   print("these are the users")

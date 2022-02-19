@@ -51,7 +51,7 @@ def _():
       print(encoded_jwt) 
       # response.set_cookie("user_email", user_email, secret=g.COOKIE_SECRET)
       response.set_cookie(encoded_jwt, user_session_id, secret=g.COOKIE_SECRET)
-      return redirect("/admin")
+      return redirect("/tweets")
     # FAIL
     else: 
       return redirect ("/login")

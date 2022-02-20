@@ -1,11 +1,15 @@
-% include("header", title="Admin")
+% include("header_loggedin", title="Admin")
 
 <main>
 
-    <a href="/logout">logout</a>
-
     <h1>Dashboard</h1>
-    <h1>Hello {{user["name"]}}. This is your admin page.</h1>
+
+    <p>First name: {{user["name"]}}</p>
+    <p>Last name: {{user["lastname"]}}</p>
+    <p>E-mail address: {{user["email"]}}</p>
+
+    <h3>Are you ready to tweet?</h3>
+    <a href="/tweets">Go to your tweet feed</a>
 
 </main>
 

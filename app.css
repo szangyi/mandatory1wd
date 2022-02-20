@@ -16,9 +16,11 @@ body {
 }
 
 nav {
-    display: grid;
+    /* display: grid; */
     width: 100%;
-    grid-template-columns: repeat(5, 100fr);
+    /* grid-template-columns: repeat(5, 100fr); */
+    display: flex;
+    padding: 0 1rem;
     align-items: center;
     justify-items: center;
     height: 4rem;
@@ -27,17 +29,27 @@ nav {
     top: 0;
     left: 0;
     z-index: 10;
-    background: rgb(252, 179, 254)
+    background: rgb(252, 179, 254);
 }
 
 nav a {
     text-decoration: none;
     color: white;
+    display: inline-block;
+    margin-right: 3rem;
+}
+
+nav[class*="nav-loggedin"] a:last-of-type {
+    margin-right: 1rem;
+    position: absolute;
+    right: 0;
 }
 
 main {
     margin-top: 5rem;
     padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
@@ -54,4 +66,14 @@ footer {
     padding: .5rem;
     border: 1px solid #999;
     background: white;
+}
+
+.logout {
+    text-align: right;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
 }

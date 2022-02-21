@@ -1,7 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box/* you want everything to obey the rules of CSS */
+    box-sizing: border-box;
+    /* you want everything to obey the rules of CSS */
+    font-family: system-ui;
 }
 
 body {
@@ -29,14 +31,29 @@ nav {
     top: 0;
     left: 0;
     z-index: 10;
-    background: rgb(252, 179, 254);
+    background: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
+    text-transform: uppercase;
+    color: black;
     display: inline-block;
     margin-right: 3rem;
+    font-size: .8rem;
+    font-weight: 800;
+    transition: .3s ease-out;
+}
+
+nav a:hover {
+    color: #4158D0
 }
 
 nav[class*="nav-loggedin"] a:last-of-type {
@@ -52,13 +69,18 @@ main {
     flex-direction: column;
 }
 
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: .2rem;
-    background: rgb(252, 179, 254)
+    background: white;
 }
 
 .item {
@@ -66,6 +88,42 @@ footer {
     padding: .5rem;
     border: 1px solid #999;
     background: white;
+}
+
+button a {
+    color: black;
+}
+
+button {
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    margin-top: 2rem;
+    border-radius: 10rem;
+    border: 0;
+    background: rgba(255, 255, 255, 0.616);
+    transition: .5s ease-out;
+    color: black;
+}
+
+button:hover {
+    background: rgba(255, 255, 255);
+}
+
+.inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inline p {
+    font-weight: 600;
+}
+
+.inline button {
+    margin-top: 0;
+    margin: 0 .6rem;
 }
 
 .logout {
@@ -76,4 +134,39 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.3rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+h3.text-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+form>div {
+    margin-top: .5rem;
+}
+
+label {
+    color: black;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+input {
+    border: 0;
+    padding: 0.2rem 0.5rem;
+    margin-left: 1rem;
+    font-size: .8rem;
+}
+
+.text-support {
+    font-size: .6rem;
+    margin-top: .3rem;
+}
+
+.error {
+    font-weight: 600;
+    font-size: .6rem;
+    color: rgb(171, 0, 0)
 }

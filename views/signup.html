@@ -8,48 +8,47 @@
     <form action="/signup" method="post">
 
         <div>
-            %if error == "user_name":
-            <h1>
-                Add your first name
-            </h1>
-            %end
-
             <label>First name</label>
             <input name="user_name" type="text" placeholder="name" value="{{(user_name or '')}}">
         </div>
 
-        <div>
-            %if error == "user_lastname":
-            <h1>
-                Add your last name
-            </h1>
-            %end
+        %if error == "user_name":
+        <p class="error">Add your first name</p>
+        %end
 
+        <div>
             <label>Last name</label>
             <input name="user_lastname" type="text" placeholder="last name" value="{{(user_lastname or '')}}">
         </div>
 
-        <div>
-            %if error == "user_email":
-            <h1>
-                Enter a valid e-mail
-            </h1>
-            %end
+        %if error == "user_lastname":
+        <p class="error">
+            Add your last name
+        </p>
+        %end
 
+        <div>
             <label>E-mail</label>
             <input name="user_email" type="text" placeholder="email" value="{{(user_email or '')}}">
         </div>
 
-        <div>
-            %if error == "user_password":
-            <h1>
-                Enter a valid password
-            </h1>
-            %end
+        %if error == "user_email":
+        <p class="error">
+            Enter a valid e-mail
+        </p>
+        %end
 
+        <div>
             <label>Password</label>
             <input name="user_password" type="password" placeholder="password">
         </div>
+        <p class="text-support">(min 6, max 50 characters)</p>
+
+        %if error == "user_password":
+        <p class="error">
+            Enter a valid password
+        </p>
+        %end
 
         <button>Signup</button>
     </form>

@@ -52,8 +52,9 @@ def _():
       # response.set_cookie("user_email", user_email, secret=g.COOKIE_SECRET)
       response.set_cookie(encoded_jwt, user_session_id, secret=g.COOKIE_SECRET)
       return redirect("/admin")
-    # FAIL
     else: 
-      return redirect ("/login")
+      print("#"*12)
+      print("no match")
+      return redirect("/login")
     
   

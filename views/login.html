@@ -1,32 +1,40 @@
 % include("header", title="Login")
 
-<main>
+<main class="flex-col">
     <h1>
         Login
     </h1>
 
     <form action="/login" method="post">
 
+        %if error == "wrong_usercredentials":
+        <p class="error">
+            There is no user with this email and/ or password.
+        </p>
+        %end
+
         <div>
+            <div>
+                <label class="text-md text-b">Email</label>
+                <input name="user_email" type="text" placeholder="Email" value="{{(user_email or '')}}">
+            </div>
             %if error == "user_email":
-            <h1>
+            <p class="error">
                 Enter a valid e-mail
-            </h1>
+            </p>
             %end
 
-            <label>Email</label>
-            <input name="user_email" type="text" placeholder="email" value="{{(user_email or '')}}">
         </div>
 
         <div>
             %if error == "user_password":
-            <h1>
+            <p class="error">
                 Enter a valid password
-            </h1>
+            </p>
             %end
 
-            <label>Password</label>
-            <input name="user_password" type="password" placeholder="password">
+            <label class="text-md text-b">Password</label>
+            <input name="user_password" type="password" placeholder="Password" value="{{(user_password or '')}}">
         </div>
 
         <button>Login</button>

@@ -30,6 +30,7 @@ def _():
     "lastname":user_lastname, 
     "password":user_password
     }
+  
   g.USERS.append(user)
   print("#"*10)
   print("these are the users")

@@ -1,42 +1,67 @@
 % include("header_loggedin", title="Tweets")
 
-<main>
+<main class="flex-col">
 
-    <h1>Hello {{user["name"]}}. Welcome to your tweet feed</h1>
 
-    <form action="/add_tweet" method="post">
+    <div class="container-post-tweet">
+        <form class="post-tweet flex-col center" action="/add_tweet" method="post">
 
-        <div>
-            <label>Tweet title</label>
-            <input name="tweet_title" type="text" placeholder="title" value="{{(tweet_title or '')}}">
-        </div>
-        <div>
-            <label>Tweet Desc</label>
-            <input name="tweet_desc" type="text" placeholder="title" value="{{(tweet_desc or '')}}">
-        </div>
+            <div>
+                <label>Tweet title</label>
+                <input name="tweet_title" type="text" placeholder="Title" value="">
+            </div>
+            <div>
+                <label>Tweet description</label>
+                <input name="tweet_desc" type="text" placeholder="Description" value="">
+            </div>
 
-        <button>Post tweet</button>
-    </form>
+            <button>Post tweet</button>
+        </form>
 
-    % if tweets == []:
-    <div>
-        No tweets yet
     </div>
-    % end
 
-    <div id="tweets">
-        % for tweet in tweets:
-        <div class="user">
-            <form action="/delete-tweet" method="POST">
-                <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
-                <div>Title {{tweet["title"]}}</div>
-                <div>Description {{tweet["desc"]}}</div>
-                <div>Time {{tweet["iat"]}}</div>
-                <button>🗑️</button>
-            </form>
+
+    <div class="flex cont-center">
+
+        % if tweets == []:
+        <div class="m-02-t">
+            <p class="text-stamp">
+                Your tweets appear here.
+            </p>
         </div>
         % end
-    </div>
+
+        <div id="tweets">
+            % for tweet in tweets:
+
+            <div class="tweet-container">
+                <div class="text-stamp flex-col m-01-l">{{tweet["iat"]}}</div>
+
+                <div class="tweet">
+
+                    <div class="update_tweet">
+
+                        <form action="update_tweet/<tweet_id>" method="post">
+                            <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
+
+                            <input name="tweet_title" value='{{tweet["title"]}}'>
+                            <input name="tweet_desc" value='{{tweet["desc"]}}'>
+                            <button class="button-02"> <i class="fa fa-pencil" aria-hidden="true"></i>Update</button>
+                        </form>
+                    </div>
+
+                    <form action="/delete_tweet" method="POST">
+                        <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
+                        <button class="button-02 text-sm" name="submit" value="delete">🗑️</button>
+                    </form>
+                </div>
+
+                <!-- <p>{{ tweet }} </p> -->
+
+            </div>
+
+            % end
+        </div>
 
 </main>
 

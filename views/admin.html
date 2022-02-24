@@ -1,15 +1,15 @@
 % include("header_loggedin", title="Admin")
 
-<main>
+<main class="flex-col">
 
     <h1>Dashboard</h1>
 
-    <p>First name: {{user["name"]}}</p>
-    <p>Last name: {{user["lastname"]}}</p>
-    <p>E-mail address: {{user["email"]}}</p>
+    <p class="text-lg text-b">First name: {{user["name"]}}</p>
+    <p class="text-lg text-b">Last name: {{user["lastname"]}}</p>
+    <p class="text-lg text-b">E-mail address: {{user["email"]}}</p>
 
-    <h3>Are you ready to tweet?</h3>
-    <a href="/tweets">Go to your tweet feed</a>
+    <h3 class="text-w m-02-t">Are you ready to tweet?</h3>
+    <a class="text-md text-w" href="/tweets">Go to your tweet feed →</a>
 
 </main>
 

@@ -1,5 +1,4 @@
 from bottle import get, view
-# from g import ITEMS
 import g
 
 ##############################

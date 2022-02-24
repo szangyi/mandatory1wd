@@ -15,6 +15,7 @@ def _():
   print(g.SESSIONS)
   if not user_session_id:
     return redirect("/login")
+  
   # if the user is not logged in:
   if user_session_id not in g.SESSIONS:
     return redirect("/login")

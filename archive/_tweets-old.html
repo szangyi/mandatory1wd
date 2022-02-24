@@ -1,0 +1,57 @@
+% include("header_loggedin", title="Tweets")
+
+<main>
+
+
+
+    <form action="/add_tweet" method="post">
+
+        <div>
+            <label>Tweet title</label>
+            <input name="tweet_title" type="text" placeholder="title" value="">
+        </div>
+        <div>
+            <label>Tweet Desc</label>
+            <input name="tweet_desc" type="text" placeholder="title" value="">
+        </div>
+
+        <button>Post tweet</button>
+    </form>
+
+    % if tweets == []:
+    <div>
+        No tweets yet
+    </div>
+    % end
+
+    <div id="tweets">
+        % for tweet in tweets:
+
+        <div class="tweet">
+
+            <form action="/tweets" method="PUT">
+                <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
+                <div>Title {{tweet["title"]}}</div>
+                <div>Description {{tweet["desc"]}}</div>
+                <div>Time {{tweet["iat"]}}</div>
+                <button>update tweet</button>
+                <!-- <button name="submit" type="submit" value="update">update tweet</button> -->
+                <!-- <button name="submit" type="submit" value="delete">🗑️</button> -->
+            </form>
+
+            <form action="/delete-tweet" method="POST">
+                <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
+                <!-- <div>Title {{tweet["title"]}}</div>
+                <div>Description {{tweet["desc"]}}</div>
+                <div>Time {{tweet["iat"]}}</div> -->
+                <button name="submit" value="delete">🗑️</button>
+            </form>
+
+        </div>
+
+        % end
+    </div>
+
+</main>
+
+% include("footer")

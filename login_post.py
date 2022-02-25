@@ -10,7 +10,8 @@ import jwt
 def _():
   response.set_header("Cache-Control", "no-cache, no-store, must-revalidate")
 
-  # VALIDATE   
+  # VALIDATE
+  # VALIDATE if the form exist, at all inputs!!!!
   if not re.match(g.REGEX_EMAIL, request.forms.get("user_email")):
     return redirect("/login?error=user_email")
 
@@ -33,6 +34,7 @@ def _():
       encoded_jwt = jwt.encode(user, "superkey", algorithm="HS256")
       # response.set_cookie("user_email", user_email, secret=g.COOKIE_SECRET)
       response.set_cookie(encoded_jwt, user_session_id, secret=g.COOKIE_SECRET)
+      response.set_cookie("jwt", encoded_jwt, secret=g.COOKIE_SECRET)
       return redirect("/admin")
   print("#"*12)
   print("no match")

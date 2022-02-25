@@ -221,7 +221,8 @@ input {
     margin-top: .1rem;
     font-weight: 600;
     font-size: .7rem;
-    color: rgb(231, 158, 12);
+    /* color: rgb(231, 158, 12); */
+    color: rgb(187, 0, 0);
 }
 
 .container-post-tweet {

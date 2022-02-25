@@ -8,6 +8,7 @@ import g
 @view("tweets")
 def _():
   response.set_header("Cache-Control", "no-cache, no-store, must-revalidate")
+  error = request.params.get("error")
   user_session_id = request.get_cookie("user_session_id")
   tweet_title = request.forms.get("tweet_title")
   tweet_desc = request.forms.get("tweet_desc")
@@ -19,4 +20,4 @@ def _():
   user = g.SESSIONS[user_session_id]
 
   
-  return dict(user=user,tweet_title=tweet_title, tweet_desc=tweet_desc, tweets = g.TWEETS)
+  return dict(error=error,user=user,tweet_title=tweet_title, tweet_desc=tweet_desc, tweets = g.TWEETS)

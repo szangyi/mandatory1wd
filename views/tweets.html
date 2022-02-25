@@ -7,10 +7,20 @@
         <form class="post-tweet flex-col center" action="/tweet_add" method="post">
 
             <div>
+                %if error == "tweet_title":
+                <p class="error">
+                    Enter a valid tweet title
+                </p>
+                %end
                 <label>Tweet title</label>
                 <input name="tweet_title" type="text" placeholder="Title" value="">
             </div>
             <div>
+                %if error == "tweet_desc":
+                <p class="error">
+                    Enter a valid tweet description
+                </p>
+                %end
                 <label>Tweet description</label>
                 <input name="tweet_desc" type="text" placeholder="Description" value="">
             </div>

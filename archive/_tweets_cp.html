@@ -4,7 +4,7 @@
 
 
 
-    <form action="/add_tweet" method="post">
+    <form action="/tweet_add" method="post">
 
         <div>
             <label>Tweet title</label>
@@ -36,7 +36,7 @@
 
 
 
-            <form action="/delete_tweet" method="POST">
+            <form action="/tweet_delete" method="POST">
                 <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
                 <div>Title {{tweet["title"]}}</div>
                 <div>Description {{tweet["desc"]}}</div>
@@ -55,7 +55,7 @@
                 % if current_tweet_id:
                 <div>
                     <p>van iiiiid</p>
-                    <form action="/update_tweet" method="POST">
+                    <form action="/tweet_update" method="POST">
 
                         <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
 

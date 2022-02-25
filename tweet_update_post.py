@@ -3,7 +3,7 @@ import g
 
 ##############################
 
-@post("/update_tweet/<tweet_id>")
+@post("/tweet_update/<tweet_id>")
 def _(tweet_id):
     tweet_id = request.forms.get("tweet_id")
     tweet_title = request.forms.get("tweet_title")

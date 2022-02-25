@@ -5,7 +5,7 @@ import time
 from time import gmtime, strftime
 
 ##############################
-@post("/add_tweet")
+@post("/tweet_add")
 def _():
   tweet_id = str(uuid.uuid4())
   tweet_title = request.forms.get("tweet_title")

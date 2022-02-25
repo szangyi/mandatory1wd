@@ -53,25 +53,25 @@ def _():
   
   
   # Update specific post 
-  update_tweet = {}
-  update_tweet_id = request.params.get("update")
+  tweet_update = {}
+  tweet_update_id = request.params.get("update")
   print("#"*20)
   print("udpate tweeeeeet id")
-  print(update_tweet_id)
-  print(update_tweet)
+  print(tweet_update_id)
+  print(tweet_update)
 
   # If update_post_id exists
-  if update_tweet_id:
+  if tweet_update_id:
     # Loop through all posts
     for tweet in g.TWEETS:
       print("#"*15)
       print("THIS IS THE TWEET")
       print(tweet)
       # if id of the post matches update_post_id set it as update_post
-      if tweet["id"] == update_tweet_id:
-        update_tweet = tweet
+      if tweet["id"] == tweet_update_id:
+        tweet_update = tweet
   
   
   # return dict(user=user, tweets=g.TWEETS, current_tweet_id=current_tweet_id)
-  return dict(user=user, tweets=g.TWEETS, current_tweet_id=current_tweet_id, update_tweet=update_tweet)
+  return dict(user=user, tweets=g.TWEETS, current_tweet_id=current_tweet_id, tweet_update=tweet_update)
   

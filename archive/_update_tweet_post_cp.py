@@ -39,7 +39,7 @@ import g
     
     
 
-@post("/update_tweet")
+@post("/tweet_update")
 def _():
   # Grab post["id"] from the form
   current_tweet_id = request.forms.get("tweet_id")

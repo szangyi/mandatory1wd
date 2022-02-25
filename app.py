@@ -13,9 +13,9 @@ import tweets_get           # GET
 
 import signup_post          # POST
 import login_post           # POST
-import add_tweet_post       # POST
-import delete_tweet_post    # POST
-import update_tweet_post    # POST
+import tweet_add_post       # POST
+import tweet_delete_post    # POST
+import tweet_update_post    # POST
 
 ##############################
 @get("/app.css")

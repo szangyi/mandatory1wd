@@ -4,7 +4,7 @@
 
 
     <div class="container-post-tweet">
-        <form class="post-tweet flex-col center" action="/add_tweet" method="post">
+        <form class="post-tweet flex-col center" action="/tweet_add" method="post">
 
             <div>
                 <label>Tweet title</label>
@@ -39,9 +39,9 @@
 
                 <div class="tweet">
 
-                    <div class="update_tweet">
+                    <div class="tweet_update">
 
-                        <form action="update_tweet/<tweet_id>" method="post">
+                        <form action="tweet_update/<tweet_id>" method="post">
                             <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
 
                             <input name="tweet_title" value='{{tweet["title"]}}'>
@@ -50,7 +50,7 @@
                         </form>
                     </div>
 
-                    <form action="/delete_tweet" method="POST">
+                    <form action="/tweet_delete" method="POST">
                         <input name="tweet_id" type="hidden" value='{{ tweet["id"] }}'>
                         <button class="button-02 text-sm" name="submit" value="delete">🗑️</button>
                     </form>

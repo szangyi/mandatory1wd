@@ -3,7 +3,7 @@ import g
 
 ##############################
 
-@post("/delete_tweet")
+@post("/tweet_delete")
 def _():
   tweet_id = request.forms.get("tweet_id")
   for index, tweet in enumerate(g.TWEETS):
